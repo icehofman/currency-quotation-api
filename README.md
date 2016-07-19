@@ -1,5 +1,7 @@
 currency-quotation-api
----
+----------------------
+
+[![Build Status](https://travis-ci.org/icehofman/currency-quotation-api.svg?branch=feature%2FClean)](https://travis-ci.org/icehofman/currency-quotation-api)
 
 ```
 public BigDecimal currencyQuotation(String from, String to, Number value, String quotation);
