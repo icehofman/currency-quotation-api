@@ -11,22 +11,18 @@ import java.util.Date;
 public class PeriodModel {
 
     public static Date getDate(String date) throws IllegalDateException {
-        Date result = null;
         try {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             formatter.setLenient(false);
-            result = formatter.parse(date);
+            return formatter.parse(date);
         } catch (Exception e) {
             throw new IllegalDateException("Error to convert date = {" + date + "}");
         }
-        return result;
     }
 
     public static String getStringDate(Date date) {
-        String result = null;
         Format formatter = new SimpleDateFormat("dd/MM/yyyy");
-        result = formatter.format(date);
-        return result;
+        return formatter.format(date);
     }
 
     public static Date getDateWithDayOfWeek(Date date) {

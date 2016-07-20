@@ -17,7 +17,7 @@ public class ExchangeRateService {
     private final String DATE_SEPARETOR = "/";
 
     public List<CurrencyModel> getCurrencies(String quotation) throws NoExchangeRateForThisDateException {
-        List<CurrencyModel> currencies = new ArrayList<CurrencyModel>();
+        List<CurrencyModel> currencies = new ArrayList<>();
         try {
             URL url = new URL(URL_EXCHANGE_RATE + this.changeFormat(quotation) + FORMAT);
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
