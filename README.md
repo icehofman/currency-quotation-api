@@ -1,6 +1,28 @@
-currency-quotation-api
----
+Currency Quotation Api
+----------------------
 
+[![Build Status](https://travis-ci.org/icehofman/currency-quotation-api.svg?branch=feature%2FClean)](https://travis-ci.org/icehofman/currency-quotation-api)
+
+### On premises:
+```shell
+$ mvn --version
+Apache Maven 3.0.5
+Maven home: /usr/share/maven
+Java version: 1.8.0_91, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: pt_BR, platform encoding: UTF-8
+OS name: "linux", version: "3.19.0-65-generic", arch: "amd64", family: "unix"
+```
+
+### Run command:
+```shell
+$ mvn clean compile
+$ mvn clean test
+```
+
+## Challenge
+
+### Method:
 ```
 public BigDecimal currencyQuotation(String from, String to, Number value, String quotation);
 ```
@@ -35,3 +57,4 @@ Data source:
 …
 20/11/2014 - 978 - B - EUR - 3,19170000
 ```
+
