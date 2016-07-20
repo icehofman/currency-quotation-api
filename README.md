@@ -1,7 +1,7 @@
 Currency Quotation Api
 ----------------------
 
-[![Build Status](https://travis-ci.org/icehofman/currency-quotation-api.svg?branch=feature%2FClean)](https://travis-ci.org/icehofman/currency-quotation-api)
+[![Build Status](https://travis-ci.org/icehofman/currency-quotation-api.svg?branch=master)](https://travis-ci.org/icehofman/currency-quotation-api)
 
 ### On premises:
 ```shell
