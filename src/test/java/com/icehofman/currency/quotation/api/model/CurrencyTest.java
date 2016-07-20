@@ -1,4 +1,4 @@
-package quotation.model;
+package com.icehofman.currency.quotation.api.model;
 
 import org.junit.Assert;
 import org.junit.Test;

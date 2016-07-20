@@ -1,13 +1,13 @@
-package quotation;
+package com.icehofman.currency.quotation.api;
 
-import quotation.exception.IllegalDateException;
-import quotation.exception.IllegalValueException;
-import quotation.exception.NoExchangeRateForThisDateException;
-import quotation.exception.NonexistentCurrencyException;
-import quotation.model.Currency;
-import quotation.service.CashService;
-import quotation.service.ExchangeRateService;
-import quotation.utils.DateUtils;
+import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
+import com.icehofman.currency.quotation.api.exceptions.IllegalValueException;
+import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
+import com.icehofman.currency.quotation.api.exceptions.NonexistentCurrencyException;
+import com.icehofman.currency.quotation.api.model.Currency;
+import com.icehofman.currency.quotation.api.services.CashService;
+import com.icehofman.currency.quotation.api.services.ExchangeRateService;
+import com.icehofman.currency.quotation.api.utils.DateUtils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

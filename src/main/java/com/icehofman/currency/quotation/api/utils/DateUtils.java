@@ -1,6 +1,6 @@
-package quotation.utils;
+package com.icehofman.currency.quotation.api.utils;
 
-import quotation.exception.IllegalDateException;
+import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 
 import java.text.DateFormat;
 import java.text.Format;

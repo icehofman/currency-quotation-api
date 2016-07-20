@@ -1,8 +1,8 @@
-package quotation.utils;
+package com.icehofman.currency.quotation.api.utils;
 
 import org.junit.Assert;
 import org.junit.Test;
-import quotation.exception.IllegalDateException;
+import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 
 import java.util.Date;
 

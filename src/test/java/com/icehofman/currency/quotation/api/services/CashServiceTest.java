@@ -1,11 +1,11 @@
-package quotation.service;
+package com.icehofman.currency.quotation.api.services;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import quotation.exception.NoExchangeRateForThisDateException;
-import quotation.model.Currency;
-import quotation.utils.DateUtils;
+import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
+import com.icehofman.currency.quotation.api.model.Currency;
+import com.icehofman.currency.quotation.api.utils.DateUtils;
 
 import java.util.Date;
 import java.util.List;

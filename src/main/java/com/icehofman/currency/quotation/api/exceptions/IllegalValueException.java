@@ -1,4 +1,4 @@
-package quotation.exception;
+package com.icehofman.currency.quotation.api.exceptions;
 
 public class IllegalValueException extends Exception {
 

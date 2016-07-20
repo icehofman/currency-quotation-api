@@ -1,7 +1,7 @@
-package quotation.service;
+package com.icehofman.currency.quotation.api.services;
 
-import quotation.exception.NoExchangeRateForThisDateException;
-import quotation.model.Currency;
+import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
+import com.icehofman.currency.quotation.api.model.Currency;
 
 import java.io.BufferedReader;
 import java.io.IOException;
