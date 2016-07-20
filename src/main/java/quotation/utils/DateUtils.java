@@ -17,7 +17,7 @@ public class DateUtils {
             formatter.setLenient(false);
             result = formatter.parse(date);
         } catch (Exception e) {
-            throw new IllegalDateException("Error - getDate impossible to convert date={" + date + "}");
+            throw new IllegalDateException("Error to convert date = {" + date + "}");
         }
         return result;
     }
