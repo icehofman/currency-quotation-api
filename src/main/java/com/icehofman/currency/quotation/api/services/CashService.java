@@ -14,7 +14,7 @@ public class CashService {
     private ExchangeRateService exchangeRateService;
 
     public CashService(ExchangeRateService exchangeRateService) {
-        this.cashCurrencies = new HashMap<String, List<CurrencyModel>>();
+        this.cashCurrencies = new HashMap<>();
         this.exchangeRateService = exchangeRateService;
     }
 
