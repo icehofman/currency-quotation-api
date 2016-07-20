@@ -1,4 +1,4 @@
-package com.icehofman.currency.quotation.api.utils;
+package com.icehofman.currency.quotation.api.models;
 
 import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 
@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DateUtils {
+public class Period {
 
     public static Date getDate(String date) throws IllegalDateException {
         Date result = null;

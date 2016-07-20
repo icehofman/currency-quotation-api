@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
-import com.icehofman.currency.quotation.api.model.Currency;
-import com.icehofman.currency.quotation.api.utils.DateUtils;
+import com.icehofman.currency.quotation.api.models.Currency;
+import com.icehofman.currency.quotation.api.models.Period;
 
 import java.util.Date;
 import java.util.List;
@@ -28,7 +28,7 @@ public class CashServiceTest {
 
     @Test(expected = NoExchangeRateForThisDateException.class)
     public void getCurrenciesTestDoesntHaveExchangeRateForDate() throws NoExchangeRateForThisDateException {
-        List<Currency> currencies = cashService.getCurrencies(DateUtils.getStringDate(DateUtils.plusDays(new Date(), 2)));
+        List<Currency> currencies = cashService.getCurrencies(Period.getStringDate(Period.plusDays(new Date(), 2)));
         Assert.assertNull(currencies);
     }
 }
