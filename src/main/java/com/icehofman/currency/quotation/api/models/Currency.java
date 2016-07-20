@@ -1,4 +1,4 @@
-package quotation.model;
+package com.icehofman.currency.quotation.api.models;
 
 import java.math.BigDecimal;
 import java.text.DateFormat;

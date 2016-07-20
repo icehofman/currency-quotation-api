@@ -1,6 +1,6 @@
-package quotation.utils;
+package com.icehofman.currency.quotation.api.models;
 
-import quotation.exception.IllegalDateException;
+import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 
 import java.text.DateFormat;
 import java.text.Format;
@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DateUtils {
+public class Period {
 
     public static Date getDate(String date) throws IllegalDateException {
         Date result = null;
@@ -17,7 +17,7 @@ public class DateUtils {
             formatter.setLenient(false);
             result = formatter.parse(date);
         } catch (Exception e) {
-            throw new IllegalDateException("Error - getDate impossible to convert date={" + date + "}");
+            throw new IllegalDateException("Error to convert date = {" + date + "}");
         }
         return result;
     }

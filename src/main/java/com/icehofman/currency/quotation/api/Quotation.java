@@ -1,13 +1,13 @@
-package quotation;
+package com.icehofman.currency.quotation.api;
 
-import quotation.exception.IllegalDateException;
-import quotation.exception.IllegalValueException;
-import quotation.exception.NoExchangeRateForThisDateException;
-import quotation.exception.NonexistentCurrencyException;
-import quotation.model.Currency;
-import quotation.service.CashService;
-import quotation.service.ExchangeRateService;
-import quotation.utils.DateUtils;
+import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
+import com.icehofman.currency.quotation.api.exceptions.IllegalValueException;
+import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
+import com.icehofman.currency.quotation.api.exceptions.NonexistentCurrencyException;
+import com.icehofman.currency.quotation.api.models.Currency;
+import com.icehofman.currency.quotation.api.services.CashService;
+import com.icehofman.currency.quotation.api.services.ExchangeRateService;
+import com.icehofman.currency.quotation.api.models.Period;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -27,7 +27,7 @@ public class Quotation {
             throw new IllegalValueException();
         }
 
-        Date date = DateUtils.getDate(quotationDate);
+        Date date = Period.getDate(quotationDate);
         quotationDate = this.changeQuotation(date);
 
         List<Currency> currencies = cashService.getCurrencies(quotationDate);
@@ -52,7 +52,7 @@ public class Quotation {
     }
 
     private String changeQuotation(Date date) {
-        return DateUtils.getStringDate(DateUtils.getDateWithDayOfWeek(date));
+        return Period.getStringDate(Period.getDateWithDayOfWeek(date));
     }
 
     private Currency getCurrency(List<Currency> currencies, String currencyName) throws NonexistentCurrencyException {
