@@ -4,10 +4,10 @@ import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 import com.icehofman.currency.quotation.api.exceptions.IllegalValueException;
 import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
 import com.icehofman.currency.quotation.api.exceptions.NonexistentCurrencyException;
-import com.icehofman.currency.quotation.api.models.Currency;
+import com.icehofman.currency.quotation.api.models.CurrencyModel;
 import com.icehofman.currency.quotation.api.services.CashService;
 import com.icehofman.currency.quotation.api.services.ExchangeRateService;
-import com.icehofman.currency.quotation.api.models.Period;
+import com.icehofman.currency.quotation.api.models.PeriodModel;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -27,20 +27,20 @@ public class Quotation {
             throw new IllegalValueException();
         }
 
-        Date date = Period.getDate(quotationDate);
+        Date date = PeriodModel.getDate(quotationDate);
         quotationDate = this.changeQuotation(date);
 
-        List<Currency> currencies = cashService.getCurrencies(quotationDate);
-        Currency fromCurrency = this.getCurrency(currencies, from);
-        Currency toCurrency = this.getCurrency(currencies, to);
+        List<CurrencyModel> currencies = cashService.getCurrencies(quotationDate);
+        CurrencyModel fromCurrencyModel = this.getCurrency(currencies, from);
+        CurrencyModel toCurrencyModel = this.getCurrency(currencies, to);
 
-        BigDecimal result = divide(fromCurrency, toCurrency);
+        BigDecimal result = divide(fromCurrencyModel, toCurrencyModel);
         return this.multiplyOn2Scale(result, value);
     }
 
-    private BigDecimal divide(Currency fromCurrency, Currency toCurrency) {
-        BigDecimal fromRate = fromCurrency.getSellingRate();
-        BigDecimal toRate = toCurrency.getSellingRate();
+    private BigDecimal divide(CurrencyModel fromCurrencyModel, CurrencyModel toCurrencyModel) {
+        BigDecimal fromRate = fromCurrencyModel.getSellingRate();
+        BigDecimal toRate = toCurrencyModel.getSellingRate();
 
         return fromRate.divide(toRate, RoundingMode.CEILING);
     }
@@ -52,13 +52,13 @@ public class Quotation {
     }
 
     private String changeQuotation(Date date) {
-        return Period.getStringDate(Period.getDateWithDayOfWeek(date));
+        return PeriodModel.getStringDate(PeriodModel.getDateWithDayOfWeek(date));
     }
 
-    private Currency getCurrency(List<Currency> currencies, String currencyName) throws NonexistentCurrencyException {
-        for (Currency currency : currencies) {
-            if (currency.getName().equals(currencyName)) {
-                return currency;
+    private CurrencyModel getCurrency(List<CurrencyModel> currencies, String currencyName) throws NonexistentCurrencyException {
+        for (CurrencyModel currencyModel : currencies) {
+            if (currencyModel.getName().equals(currencyName)) {
+                return currencyModel;
             }
         }
         throw new NonexistentCurrencyException("name: " + currencyName);

@@ -1,8 +1,8 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.icehofman.currency.quotation.api</groupId>
-    <artifactId>currency.quotation.api</artifactId>
+    <groupId>com.icehofman.currencyModel.quotation.api</groupId>
+    <artifactId>currencyModel.quotation.api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Currency Quotation Api</name>
     <properties>
@@ -36,7 +36,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <mainClass>com.icehofman.currency.quotation.api.Quotation</mainClass>
+                    <mainClass>com.icehofman.currencyModel.quotation.api.Quotation</mainClass>
                 </configuration>
             </plugin>
         </plugins>

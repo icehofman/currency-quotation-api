@@ -5,7 +5,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Currency {
+public class CurrencyModel {
 
     private final String SEPARATOR = ";";
 
@@ -18,7 +18,7 @@ public class Currency {
     private BigDecimal purchasingParity;
     private BigDecimal saleParity;
 
-    public Currency(String line) throws IllegalArgumentException {
+    public CurrencyModel(String line) throws IllegalArgumentException {
         try {
             String[] data = line.split(SEPARATOR);
 
@@ -36,7 +36,7 @@ public class Currency {
         }
     }
 
-    public Currency() {
+    public CurrencyModel() {
         super();
     }
 

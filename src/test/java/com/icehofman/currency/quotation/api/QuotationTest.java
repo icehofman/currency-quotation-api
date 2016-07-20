@@ -7,7 +7,7 @@ import com.icehofman.currency.quotation.api.exceptions.IllegalDateException;
 import com.icehofman.currency.quotation.api.exceptions.IllegalValueException;
 import com.icehofman.currency.quotation.api.exceptions.NoExchangeRateForThisDateException;
 import com.icehofman.currency.quotation.api.exceptions.NonexistentCurrencyException;
-import com.icehofman.currency.quotation.api.models.Period;
+import com.icehofman.currency.quotation.api.models.PeriodModel;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -34,7 +34,7 @@ public class QuotationTest {
 
     @Test(expected = NoExchangeRateForThisDateException.class)
     public void testCurrencyWithoutExchangeRate() throws IllegalValueException, IllegalDateException, NoExchangeRateForThisDateException, NonexistentCurrencyException {
-        quotation.currencyQuotation("USD", "EUR", 100.00, Period.getStringDate(Period.plusDays(new Date(), 2)));
+        quotation.currencyQuotation("USD", "EUR", 100.00, PeriodModel.getStringDate(PeriodModel.plusDays(new Date(), 2)));
     }
 
     @Test(expected = NonexistentCurrencyException.class)

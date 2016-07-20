@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Period {
+public class PeriodModel {
 
     public static Date getDate(String date) throws IllegalDateException {
         Date result = null;
